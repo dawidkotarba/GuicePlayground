@@ -1,0 +1,15 @@
+syntax = "proto3";
+package protobuf;
+
+option java_package = "protobuf";
+option java_outer_classname = "GuicePlaygroundProtos";
+
+message User {
+    string username = 1;
+    int32 age = 2;
+}
+
+message BlogPost {
+    string title = 1;
+    string body = 2;
+}
