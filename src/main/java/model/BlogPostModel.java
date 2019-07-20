@@ -1,22 +1,17 @@
 package model;
 
+import com.google.auto.value.AutoValue;
+
 import java.io.Serializable;
 
-public class BlogPostModel implements Serializable {
+@AutoValue
+public abstract class BlogPostModel implements Serializable {
 
-    private String title;
-    private String body;
+    public abstract String title();
 
-    public BlogPostModel(String title, String body) {
-        this.title = title;
-        this.body = body;
-    }
+    public abstract String body();
 
-    public String getTitle() {
-        return title;
-    }
-
-    public String getBody() {
-        return body;
+    public static BlogPostModel create(final String title, final String body) {
+        return new AutoValue_BlogPostModel(title, body);
     }
 }

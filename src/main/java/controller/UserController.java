@@ -22,14 +22,14 @@ public class UserController implements Controller {
     public List<String> showUsers() {
         final List<UserModel> users = userDao.findAll();
         return users.stream()
-                .map(user -> user.getUsername() + " has age: " + user.getAge() + "\n")
+                .map(user -> user.username() + " has age: " + user.age() + "\n")
                 .collect(Collectors.toList());
     }
 
     public List<String> showBlogPosts() {
         final List<BlogPostModel> blogPosts = blogPostDao.findAll();
         return blogPosts.stream()
-                .map(post -> post.getTitle() + ", body: " + post.getBody() + "\n")
+                .map(post -> post.title() + ", body: " + post.body() + "\n")
                 .collect(Collectors.toList());
     }
 

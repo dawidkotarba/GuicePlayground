@@ -79,7 +79,7 @@ public class MockDb implements Database {
         }
         return Arrays.stream(TEST_USERNAMES)
                 .map(this::readUser)
-                .map(protobuf -> new UserModel(protobuf.getUsername(), protobuf.getAge()))
+                .map(protobuf -> UserModel.create(protobuf.getUsername(), protobuf.getAge()))
                 .collect(Collectors.toList());
     }
 
@@ -90,7 +90,7 @@ public class MockDb implements Database {
         }
         return Arrays.stream(TEST_BLOGPOST_TITLES)
                 .map(this::readBlogPost)
-                .map(protobuf -> new BlogPostModel(protobuf.getTitle(), protobuf.getBody()))
+                .map(protobuf -> BlogPostModel.create(protobuf.getTitle(), protobuf.getBody()))
                 .collect(Collectors.toList());
     }
 

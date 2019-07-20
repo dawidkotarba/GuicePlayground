@@ -1,22 +1,17 @@
 package model;
 
+import com.google.auto.value.AutoValue;
+
 import java.io.Serializable;
 
-public class UserModel implements Serializable {
+@AutoValue
+public abstract class UserModel implements Serializable {
 
-    private String username;
-    private int age;
+    public abstract String username();
 
-    public UserModel(String username, int age) {
-        this.username = username;
-        this.age = age;
-    }
+    public abstract int age();
 
-    public String getUsername() {
-        return username;
-    }
-
-    public int getAge() {
-        return age;
+    public static UserModel create(final String username, final int age) {
+        return new AutoValue_UserModel(username, age);
     }
 }
