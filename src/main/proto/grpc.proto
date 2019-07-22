@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "protobuf";
+option java_outer_classname = "GrpcProtos";
+
+message DataSummary {
+    int32 blog_post_count = 1;
+    int32 user_count = 2;
+}
+
+message Empty {
+
+}
+
+service DataSummaryService {
+    rpc getSummary (Empty) returns (stream  DataSummary) {
+    }
+}

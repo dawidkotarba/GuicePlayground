@@ -1,5 +1,4 @@
 syntax = "proto3";
-package protobuf;
 
 option java_package = "protobuf";
 option java_outer_classname = "GuicePlaygroundProtos";
