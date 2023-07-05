@@ -8,7 +8,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <autovalue.version>1.6.5</autovalue.version>
-        <grpc.version>1.22.1</grpc.version>
+        <grpc.version>1.53.0</grpc.version>
     </properties>
 
     <groupId>dawid.kotarba</groupId>
